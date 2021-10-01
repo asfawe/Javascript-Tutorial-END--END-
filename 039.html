@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container"></div>
+  <div class="container"></div>
+  <div class="container"></div>
+  <script>
+    const frag = document.createDocumentFragment();
+
+    //let elments =[];
+
+    for(let i=0; i<100; i++){
+      const el = document.createElement('div');
+      //elments.push(el);
+      frag.appendChild(el);
+    }
+
+    const cont = document.querySelectorAll(".container");
+
+    for(let i=0; i<cont.length; i++){
+      cont[i].appendChild(frag.cloneNode(true));
+    }
+
+    console.log(frag.cloneNodes);
+  </script>
+
+</html>

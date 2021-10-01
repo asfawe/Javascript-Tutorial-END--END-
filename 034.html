@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="parent">
+    <button type="button">generate item</button>
+    <ul>
+      <li>initial item</li>
+
+    </ul>
+  </div>
+
+  <script>
+    const parent = document.querySelector(".parent");
+
+    parent.addEventListener('click', function(){
+      if(event.target.tagName.toLowerCase() === "button") {
+        const item = document.createElement('li');
+        item.innerText = "hello world~";
+        parent.querySelector('ul').appendChild(item);
+      }
+
+      if(event.target.tagName.toLowerCase() === "li"){
+        console.log('hit!!!');
+        //document.write('hit!!!');
+      }
+    });
+  </script>
+</body>
+
+</html>
